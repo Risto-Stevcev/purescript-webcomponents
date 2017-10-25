@@ -13,9 +13,10 @@
     "test": "test"
   },
   "scripts": {
-    "build": "pulp browserify -I test --main Test.Main > bundle.js",
+    "build": "pulp build",
+    "bundle": "pulp browserify -I test --main Test.Main > bundle.js",
     "test": "./node_modules/.bin/karma start karma.conf.js",
-    "clean": "rm -rf bundle.js"
+    "clean": "rm -rf bundle.js output/"
   },
   "devDependencies": {
     "karma": "^1.7.1",
