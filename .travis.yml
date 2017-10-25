@@ -6,6 +6,7 @@ addons:
   chrome: stable
 install:
   - npm install -g bower
+  - npm install -g purescript
   - npm install
 before_script:
   - "export DISPLAY=:99.0"
