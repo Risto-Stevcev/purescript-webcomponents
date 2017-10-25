@@ -1,0 +1,23 @@
+language: node_js
+dist: trusty
+sudo: required
+node_js: 6
+addons:
+  chrome: stable
+install:
+  - npm install -g bower
+  - npm install
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+script:
+  - bower install --production
+  - npm run -s build
+  - bower install
+  - npm -s test
+after_success:
+- >-
+  test $TRAVIS_TAG &&
+  echo $GITHUB_TOKEN | pulp login &&
+  echo y | pulp publish --no-push

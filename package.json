@@ -1,0 +1,27 @@
+{
+  "name": "purescript-webcomponents",
+  "author": "Risto Stevcev",
+  "license": "BSD-3-Clause",
+  "description": "A web components wrapper for purescript",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Risto-Stevcev/purescript-webcomponents.git"
+  },
+  "version": "0.1.0",
+  "main": "bundle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "bundle": "pulp browserify -I test --main Test.Main > bundle.js",
+    "karma": "./node_modules/.bin/karma start karma.conf.js",
+    "test": "npm run bundle && npm run karma"
+  },
+  "devDependencies": {
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "mocha": "^4.0.1"
+  }
+}
